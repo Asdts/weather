@@ -1,4 +1,5 @@
 weatherVenv/
 node_modules/
 frontend/
+frontend/*
 .vercel
