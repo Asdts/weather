@@ -4,10 +4,10 @@ from backend.sdk.agents.comments.prompt_template import *
 
 class LogCommentAgent(BaseAgent):
     NAME = 'log_aut_tagging_agent'
-    def get_messages(self, city: str , weather: str):
+    def get_messages(self, weather_log: str):
         return [
             {'role': 'system', 'content': 'You are a helpful assistant'},  # TEMP
-            {'role': 'user', 'content': LOG_COMMENTS_PROMPT.format(city=city, weather=weather)},
+            {'role': 'user', 'content': LOG_COMMENTS_PROMPT.format(weather_log=weather_log)},
         ]
 
     def get_action(self, generated_text):

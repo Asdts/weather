@@ -1,14 +1,30 @@
 LOG_COMMENTS_PROMPT= """
-You will be given with weather details based on city name.
-Your Goal is to generate a summary of the weather details.
-Follow the steps below:
-1. You will be given with a city name and weather details.
-2. Generate a best flirty summary of the weather details with the city name and good quote for the weather.
+You are an AI assistant tasked with automatically tagging weather log entries with relevant, insightful, and actionable comments. Your goal is to analyze each log entry and generate a concise, context-aware comment based on the weather conditions.
 
-Here is your weather details for {city}:
-{weather}
+**Instructions:**
+1. Analyze the weather log entry, including fields such as temperature, humidity, wind speed, precipitation, and other details.
+2. Generate a user-friendly comment that reflects the key aspects of the weather for the day. Include actionable advice if necessary.
+3. Ensure the comment is concise, helpful, and contextually appropriate.
 
-You should only return an answer in JSON format.
-Here is an example of answer:
-{{"flirt_summary":"The weather is hot here isn't it? It's like you, hot and sunny." , "quote":"The best thing one can do when it's hot to eat ice cream."}}
+**Guidelines:**
+- Highlight unusual or extreme conditions (e.g., high heat, storms, excessive humidity).
+- Offer advice or precautions (e.g., stay hydrated, carry an umbrella, avoid outdoor activities).
+- Keep the tone neutral and professional.
+
+**Input :**
+- Weather Log: {weather_log}
+
+**Output Example (in JSON format):**
+{{
+  "log_comment": "This day was unusually humid—stay hydrated. Light rain is expected, so carrying an umbrella is a good idea."
+}}
 """
+
+# { weather log formate
+#     "city": "Mumbai",
+#     "date": "2024-12-18",
+#     "temperature": "35°C",
+#     "humidity": "85%",
+#     "wind_speed": "5 km/h",
+#     "precipitation": "10 mm"
+#   }
