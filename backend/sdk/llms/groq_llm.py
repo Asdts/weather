@@ -12,7 +12,7 @@ from backend.sdk.llms.base_llm import BaseLLM
 class GroqLLM(BaseLLM):
     llm_backend = 'groq'
     
-    def __init__(self, llm_config, max_api_call_retries=3):
+    def __init__(self, llm_config,api_key, max_api_call_retries=3):
         super().__init__(llm_config, max_api_call_retries)
         api_key = os.getenv('GROQ_API_KEY')
         assert api_key, 'Empty GROQ_API_KEY'

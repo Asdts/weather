@@ -11,9 +11,9 @@ from backend.sdk.llms.base_llm import BaseLLM
 class OpenaiLLM(BaseLLM):
     llm_backend = 'openai'
     
-    def __init__(self, llm_config, max_api_call_retries=3):
+    def __init__(self, llm_config,api_key, max_api_call_retries=3):
         super().__init__(llm_config, max_api_call_retries)
-        api_key = os.getenv('OPENAI_API_KEY')
+        api_key = os.getenv('OPENAI_API_KEY') or api_key
         assert api_key, 'Empty OPENAI_API_KEY'
         openai.api_key = api_key
         self.name = llm_config['model']
