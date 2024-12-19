@@ -53,6 +53,10 @@ def initialize_agents():
     agents['recommendation'] = RecommendationAgent(llm=current_llm)
     agents['summary'] = SummaryAgent(llm=current_llm)
 
+@app.route('/health')
+def health_check():
+    return "OK", 200
+
 @app.route('/configure', methods=['POST'])
 def configure():
     data = request.json
