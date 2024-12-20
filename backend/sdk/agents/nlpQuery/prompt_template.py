@@ -12,17 +12,10 @@ You are an AI assistant enabling natural language querying for weather log data.
 - "Which city had the lowest humidity yesterday?"
 
 **Input Example:**
-- Weather Logs: {weather_logs}
-- Query: "What was the highest temperature recorded in Delhi this month?"
+- data: {weather_logs}
 
 **Output Example:**
 {{
-  "query": "What was the highest temperature recorded in Delhi this month?",
-  "result": {{
-    "city": "Delhi",
-    "highest_temperature": "45°C",
-    "date_recorded": "2024-12-05"
-  }},
-  "insights": "Delhi experienced its hottest day this month on December 5th."
+  "insights": "Delhi experienced its hottest day this month on December 5th.Seems like you went out cutie pie"
 }}
 """

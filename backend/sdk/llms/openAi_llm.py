@@ -62,16 +62,17 @@ class OpenaiLLM(BaseLLM):
             print("Warning: model not found. Using cl100k_base encoding.")
             encoding = tiktoken.get_encoding("cl100k_base")
         if model in {
-            "gpt-3.5-turbo-0613",
-            "gpt-3.5-turbo-16k-0613",
-            "gpt-4-0314",
-            "gpt-4-32k-0314",
-            "gpt-4-0613",
-            "gpt-4-32k-0613",
+            "gpt-4o",
+            "chatgpt-4o-latest",
+            "gpt-4o-mini",
+            "o1-2024-12-17",
+            "gpt-4-turbo",
+            "gpt-3.5-turbo-0125",
+            "gpt-3.5-turbo",
             }:
             tokens_per_message = 3
             tokens_per_name = 1
-        elif model == "gpt-3.5-turbo-0301":
+        elif model == "gpt-3.5-turbo-1106":
             tokens_per_message = 4  # every message follows <|start|>{role/name}\n{content}<|end|>\n
             tokens_per_name = -1  # if there's a name, the role is omitted
         elif "gpt-3.5-turbo" in model:

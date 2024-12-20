@@ -11,15 +11,10 @@ You are an AI assistant analyzing weather data logs. Your goal is to provide ins
 
 **Input Example:**
 - Weather Logs: {weather_logs}
-- Query: "What was the average temperature in Mumbai last week?"
 
 **Output Example:**
 {{
-  "query": "What was the average temperature in Mumbai last week?",
-  "analytics": {{
-    "average_temperature": "32°C",
-    "trend": "The week showed consistent temperatures with slight cooling towards the weekend."
-  }},
   "insights": "Mumbai experienced a warm week with stable weather conditions."
+  "Tag": "Weather Insights"
 }}
 """

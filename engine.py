@@ -20,9 +20,9 @@ class TestEngine:
             'max_tokens': 200,
         }
         if llm_backend == 'openai':
-            self.llm = OpenaiLLM(llm_config)
+            self.llm = OpenaiLLM(llm_config,api_key=os.getenv('OPENAI_API_KEY'))
         elif llm_backend == 'groq':
-            self.llm = GroqLLM(llm_config)
+            self.llm = GroqLLM(llm_config,api_key=os.getenv('GROQ_API_KEY'))
         else:
             raise ValueError("Unsupported LLM backend. Choose 'openai' or 'groq'.")
 
@@ -46,7 +46,7 @@ class TestEngine:
 
 if __name__ == "__main__":
     # Initialize the testing engine
-    engine = TestEngine(llm_backend='groq', model='gemma2-9b-it', debug=True)
+    engine = TestEngine(llm_backend='openai', model='gpt-4o', debug=True)
 
     # Define test inputs
     test_cases = [

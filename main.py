@@ -25,7 +25,7 @@ def configure_openai(api_key, model):
         'temperature': 0.7,
         'max_tokens': 150
     }
-    current_llm = OpenaiLLM(llm_config)
+    current_llm = OpenaiLLM(llm_config,api_key)
     # current_llm.llm_config['api_key'] = api_key
     initialize_agents()
 
